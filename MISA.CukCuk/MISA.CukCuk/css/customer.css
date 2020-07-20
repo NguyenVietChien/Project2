@@ -123,7 +123,10 @@ a{
 }
 
 .icon-help {
-    background-position: 8px -70px;
+    background-image: url('../content/images/iconHelp.png');
+    width: 40px;
+    height: 40px;
+    background-repeat: no-repeat;
 }
 
 .icon-postpaid {
@@ -148,7 +151,7 @@ a{
 
 .content-body .page-title h1 {
     margin: 5px 0px 5px 0px;
-    font-size: 18px;
+    font-size: 15px;
 }
 
 .content-body .grid-content {
@@ -158,10 +161,11 @@ a{
 }
 
 .grid-content .toolbar {
-    border: 1px solid #237ebb;
     height: 25px;
     width: 100%;
     display: flex;
+    background-color: #a1b7c7;
+    
 }
 
 .toolbar button {
@@ -170,6 +174,7 @@ a{
     border: none;
     cursor: pointer;
     align-items: center;
+    background-color: #a1b7c7;
 }
 
 .toolbar button:hover {
@@ -197,7 +202,6 @@ a{
 }
 
 .grid-content .grid {
-    border: 1px solid #1b8bd4;
     width: 100%;
     height: calc(100% - 50px);
 }
@@ -212,7 +216,6 @@ a{
 
 .grid table {
     width: 100%;
-    border : 1px solid rgb(155, 69, 69);
     border-collapse: collapse;
 }
 

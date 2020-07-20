@@ -390,6 +390,7 @@
     <Content Include="content\vendors\jquery-ui-1.12.1\jquery-ui.theme.min.css" />
     <Content Include="content\vendors\jquery-ui-1.12.1\LICENSE.txt" />
     <Content Include="css\customer.css" />
+    <Content Include="css\employee.css" />
     <Content Include="js\common.js" />
     <Content Include="js\customer.js" />
     <Content Include="js\employee.js" />

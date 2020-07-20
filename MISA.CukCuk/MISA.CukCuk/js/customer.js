@@ -1,78 +1,104 @@
 ﻿$(document).ready(function () {
-    loadData();
+    
+    var customer = new CustomerJS();
+
 })
 
-function loadData() {
-    $.each(data, function (index, item) {
-        var trHTML = $(`<tr>
-                            <td>`+ item.EmployeeCode + `</td>
-                            <td>`+ item.EmployeeName + `</td>
-                            <td>`+ item.email + `</td>
-                            <td>`+ item.mobile + `</td>
-                            <td>`+ item.adress + `</td>
-                        </tr>`);
-                        debugger;
-        $('.grid tbody').append(trHTML);
+class CustomerJS {
+    constructor(){
+        this.loadData();
+    }
 
-    })
+    loadData(){
+        $.each(data, function (index, item) {
+            var trHTML = $(`<tr>
+                                <td>`+ item.CustomerCode + `</td>
+                                <td>`+ item.CustomerName + `</td>
+                                <td>`+ item.email + `</td>
+                                <td>`+ item.mobile + `</td>
+                                <td>`+ item.adress + `</td>
+                            </tr>`);
+                            debugger;
+            $('.grid tbody').append(trHTML);
+    
+        })
+    }
+
+
 }
 
 var data = [
     {
-        EmployeeCode: "NV10111",
-        EmployeeName: "Hoàng Trung",
+        CustomerCode: "NV10111",
+        CustomerName: "Hoàng Trung",
         email: "chienuetvnu@gmail.com",
         mobile: "0328646777",
         adress: "Cau giấy"
     },
 
     {
-        EmployeeCode: "NV10131",
-        EmployeeName: "Mã Siêu",
+        CustomerCode: "NV10131",
+        CustomerName: "Mã Siêu",
         email: "chienuetvnu@gmail.com",
         mobile: "0328646777",
         adress: "Cau giấy"
     },
 
     {
-        EmployeeCode: "NV40111",
-        EmployeeName: "Lưu Bị",
+        CustomerCode: "NV40111",
+        CustomerName: "Lưu Bị",
         email: "chienuetvnu@gmail.com",
         mobile: "0328646777",
         adress: "Cau giấy"
     },
 
     {
-        EmployeeCode: "NV10151",
-        EmployeeName: "Quan Vũ",
+        CustomerCode: "NV10151",
+        CustomerName: "Quan Vũ",
         email: "chienuetvnu@gmail.com",
         mobile: "0328646777",
         adress: "Cau giấy"
     },
 
     {
-        EmployeeCode: "NV10711",
-        EmployeeName: "Trương Phi",
+        CustomerCode: "NV10711",
+        CustomerName: "Trương Phi",
         email: "chienuetvnu@gmail.com",
         mobile: "0328646777",
         adress: "Cau giấy"
     },
 
     {
-        EmployeeCode: "NV10911",
-        EmployeeName: "Triệu Vân",
+        CustomerCode: "NV10911",
+        CustomerName: "Triệu Vân",
         email: "chienuetvnu@gmail.com",
         mobile: "0328646777",
         adress: "Cau giấy"
     },
 
     {
-        EmployeeCode: "NV40111",
-        EmployeeName: "Khổng Minh",
+        CustomerCode: "NV10711",
+        CustomerName: "Trương Phi",
         email: "chienuetvnu@gmail.com",
         mobile: "0328646777",
         adress: "Cau giấy"
     },
+
+    {
+        CustomerCode: "NV10911",
+        CustomerName: "Triệu Vân",
+        email: "chienuetvnu@gmail.com",
+        mobile: "0328646777",
+        adress: "Cau giấy"
+    },
+
+    {
+        CustomerCode: "NV40111",
+        CustomerName: "Khổng Minh",
+        email: "chienuetvnu@gmail.com",
+        mobile: "0328646777",
+        adress: "Cau giấy"
+    }
 
 
 ]
