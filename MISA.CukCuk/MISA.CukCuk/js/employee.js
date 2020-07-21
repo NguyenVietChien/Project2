@@ -1,14 +1,13 @@
 ﻿$(document).ready(function () {
-    
+
     var employeess = new employeeJS();
-    
+    employeess.load_Data();
 
 })
 
 class employeeJS {
-    constructor(){
+    constructor() {
         this.initEvents();
-        this.load_Data();
     }
 
     initEvents() {
@@ -16,50 +15,74 @@ class employeeJS {
         $('#buttonCancel').click(this.btnCancelOnClick.bind(this));
         $('#buttonSave').click(this.btnSaveOnClick.bind(this));
         $('.title-close-button').click(this.btnCancelOnClick.bind(this));
+        $(".required").blur(this.checkRequired);
     }
 
-    btnAddOnClick(){
+    checkRequired() {
+
+        var value = this.value;
+        if (!value) {
+            $(this).addClass('required-error');
+            $(this).attr("title", "Bạn phải nhập thông tin này");
+            return;
+        }
+        else {
+            $(this).removeClass('required-error');
+            $(this).removeAttr("title");
+            return;
+        }
+
+    }
+
+    btnAddOnClick() {
         this.showDialogDetail();
     };
 
-    btnCancelOnClick(){
+    btnCancelOnClick() {
         this.hideDialogDetail();
     }
 
-    btnSaveOnClick(){
+    btnSaveOnClick() {
         // Validate
-        //alert(1);
-        var employeeCodes = $("#txtEmployeeCode").val();
-        var employeeNames = $("#txtEmployeeName").val();
-        
-        if(!employeeCodes){
-            $("#txtEmployeeCode").addClass('required-error');
-            $("#txtEmployeeCode").focus();
-            $("#txtEmployeeCode").attr("title","bạn phải nhập thông tin này");
-            return;
-        }
-        if(!employeeNames){
-            alert('Bạn phải nhập thông tin');
-            return;
-        }
-        //
+        var inputRequireds = $(".required");
+        var isValid = true ;
+        $.each(inputRequireds, function(index, input){
+                var valid = $(input).trigger("blur");
+                if( isValid && valid.hasClass("required-error")){
+                    isValid = false;
+                  
+                }
+                if(isValid){
+                    // get data
+                    var employee = {};
+                    employee.EmployeeCode = $('#txtEmployeeCode').val();
+                    employee.EmployeeName = $('#txtEmployeeName').val();
+                    employee.email = $('#txtEmail').val();
+                    employee.mobile = $('#txtMobile').val();
+                    employee.CompanyName = $('#txtCompanyName').val();
+         
+                    // Save to DB
+                    employees.push(employee);
+                
+                    // reload Data
 
-
-        //
-
+                    this.load_Data();
+                }
+        })
     }
 
-    showDialogDetail(){
+    showDialogDetail() {
         $('.dialog-modal').show();
         $('.dialog').show();
+        $("#txtEmployeeCode").focus();
     }
 
-    hideDialogDetail(){
+    hideDialogDetail() {
         $('.dialog-modal').hide();
         $('.dialog').hide();
     }
 
-    load_Data(){
+    load_Data() {
         $.each(employees, function (index, item) {
             var trHTML = $(`<tr>
                                 <td>`+ item.EmployeeCode + `</td>
@@ -68,9 +91,8 @@ class employeeJS {
                                 <td>`+ item.mobile + `</td>
                                 <td>`+ item.CompanyName + `</td>
                             </tr>`);
-                            debugger;
             $('.grid tbody').append(trHTML);
-    
+
         })
     }
 
@@ -85,6 +107,111 @@ var employees = [
         mobile: "0328646777",
         CompanyName: "Cau giấy"
     },
+
+    {
+        EmployeeCode: "NV10131",
+        EmployeeName: "Mã Siêu",
+        email: "chienuetvnu@gmail.com",
+        mobile: "0328646777",
+        CompanyName: "Cau giấy"
+    },
+
+    {
+        EmployeeCode: "NV40111",
+        EmployeeName: "Lưu Bị",
+        email: "chienuetvnu@gmail.com",
+        mobile: "0328646777",
+        CompanyName: "Cau giấy"
+    },
+
+    {
+        EmployeeCode: "NV10131",
+        EmployeeName: "Mã Siêu",
+        email: "chienuetvnu@gmail.com",
+        mobile: "0328646777",
+        CompanyName: "Cau giấy"
+    },
+
+    {
+        EmployeeCode: "NV40111",
+        EmployeeName: "Lưu Bị",
+        email: "chienuetvnu@gmail.com",
+        mobile: "0328646777",
+        CompanyName: "Cau giấy"
+    },
+
+    {
+        EmployeeCode: "NV10131",
+        EmployeeName: "Mã Siêu",
+        email: "chienuetvnu@gmail.com",
+        mobile: "0328646777",
+        CompanyName: "Cau giấy"
+    },
+
+    {
+        EmployeeCode: "NV40111",
+        EmployeeName: "Lưu Bị",
+        email: "chienuetvnu@gmail.com",
+        mobile: "0328646777",
+        CompanyName: "Cau giấy"
+    },
+
+    {
+        EmployeeCode: "NV10131",
+        EmployeeName: "Mã Siêu",
+        email: "chienuetvnu@gmail.com",
+        mobile: "0328646777",
+        CompanyName: "Cau giấy"
+    },
+
+    {
+        EmployeeCode: "NV40111",
+        EmployeeName: "Lưu Bị",
+        email: "chienuetvnu@gmail.com",
+        mobile: "0328646777",
+        CompanyName: "Cau giấy"
+    },
+
+    {
+        EmployeeCode: "NV10131",
+        EmployeeName: "Mã Siêu",
+        email: "chienuetvnu@gmail.com",
+        mobile: "0328646777",
+        CompanyName: "Cau giấy"
+    },
+
+    {
+        EmployeeCode: "NV40111",
+        EmployeeName: "Lưu Bị",
+        email: "chienuetvnu@gmail.com",
+        mobile: "0328646777",
+        CompanyName: "Cau giấy"
+    },
+
+    {
+        EmployeeCode: "NV10131",
+        EmployeeName: "Mã Siêu",
+        email: "chienuetvnu@gmail.com",
+        mobile: "0328646777",
+        CompanyName: "Cau giấy"
+    },
+
+    {
+        EmployeeCode: "NV40111",
+        EmployeeName: "Lưu Bị",
+        email: "chienuetvnu@gmail.com",
+        mobile: "0328646777",
+        CompanyName: "Cau giấy"
+    },
+
+    {
+        EmployeeCode: "NV10131",
+        EmployeeName: "Mã Siêu",
+        email: "chienuetvnu@gmail.com",
+        mobile: "0328646777",
+        CompanyName: "Cau giấy"
+    },
+
 
     {
         EmployeeCode: "NV10131",
@@ -125,7 +252,32 @@ var employees = [
         mobile: "0328646777",
         CompanyName: "Cau giấy"
     },
-    
+
+    {
+        EmployeeCode: "NV10151",
+        EmployeeName: "Quan Vũ",
+        email: "chienuetvnu@gmail.com",
+        mobile: "0328646777",
+        CompanyName: "Cau giấy"
+    },
+
+    {
+        EmployeeCode: "NV10711",
+        EmployeeName: "Trương Phi",
+        email: "chienuetvnu@gmail.com",
+        mobile: "0328646777",
+        CompanyName: "Cau giấy"
+    },
+
+    {
+        EmployeeCode: "NV10911",
+        EmployeeName: "Triệu Vân",
+        email: "chienuetvnu@gmail.com",
+        mobile: "0328646777",
+        CompanyName: "Cau giấy"
+    },
+
+
 
     {
         EmployeeCode: "NV40111",

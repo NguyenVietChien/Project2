@@ -103,8 +103,14 @@
             <div class="grid-content">
                 <div class="toolbar">
                     <button id="btnAdd"><i class="icon icon-add"></i>Thêm</button>
+                    <button id="btnDuplicate"><i class="icon icon-duplicate"></i>Nhân bản</button>
                     <button id="btnEdit"><i class="icon icon-edit"></i>Sửa</button>
                     <button id="btnDelete"><i class="icon icon-delete"></i>Xóa</button>
+                    <button id="btnCharge"><i class="icon icon-charge"></i>Nạp</button>
+                    <button id="btnImport"><i class="icon icon-import"></i>Nhập khẩu</button>
+                    <button id="btnExport"><i class="icon icon-export"></i>Xuất khẩu</button>
+                    <button id="btnMergeCus"><i class="icon icon-merge-custom"></i>Gộp khách hàng</button>
+                    <button id="btnHelp"><i class="icon icon-helps"></i>Giúp</button>
                 </div>
                 <div class="grid">
                     <!-- grid -->
@@ -135,30 +141,27 @@
 
     <div class="dialog">
         <div class="dialog-title">
-            
             <div class="title-text">Thông tin nhân viên</div>
-
             <div class="title-close-button"></div>
-
         </div>
 
         <div class="dialog-body">
             <div class="row">
-                <label>Mã nhân viên</label>
-                <input  id="txtEmployeeCode" type="text">
+                <label>Mã nhân viên(*)</label>
+                <input  id="txtEmployeeCode" class="required" type="text">
             </div>
             <div class="row">
-                <label>Tên nhân viên</label>
-                <input  id="txtEmployeeName" type="text">
+                <label>Tên nhân viên(*)</label>
+                <input  id="txtEmployeeName" class="required" type="text">
             </div>
             <div class="row">
                 <label>Email </label>
-                <input type="text" id="txtEmail">
+                <input type="email" id="txtEmail" class="required">
             </div>
 
             <div class="row">
                 <label>Số điện thoại</label>
-                <input type="text" id="txtmobile">
+                <input type="tel" id="txtMobile" class="required">
             </div>
 
             <div class="row">
